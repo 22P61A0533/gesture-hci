@@ -6,7 +6,7 @@ steps
 git 'https://github.com/22P61A0533/gesture-hci.git'
 }
 }
-stage('Build){
+stage('Build'){
 steps{
 echo 'Building the project...'
 sh 'javac Welcome.java'
