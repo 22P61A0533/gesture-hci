@@ -1,0 +1,96 @@
+<html>
+<head>
+<style>
+div{
+background-color: rgb(50, 205, 207);
+text-align: center;
+height: 100vh;
+background-size: cover;
+}
+img{
+margin: 5px;
+}
+button{
+height: 30px;
+width: 80px;
+background-color: chartreuse;
+border-radius: 3px;
+border-width: 0px;
+}
+h1{
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-size: 20px;
+color:rgb(211, 76, 144);
+}
+</style>
+<script>
+function validateForm(){
+const fname=document.getElementById("fname").value;
+const lname=document.getElementById("lname").value;
+const email=document.getElementById("email").value;
+const password=document.getElementById("pswd").value;
+const confirmpassword=document.getElementById("password").value;
+let a=password.length;
+if(fname===""){
+alert("please enter your name");
+return false;
+}
+if(lname===""){
+alert("please enter your last name");
+return false;
+}
+if (a<8){
+alert("length of the password should be greater than 8 characters");
+return false;
+}
+if (password != confirmpassword){
+alert("password has not matched");
+return false;
+}
+const hasupper=/[A-Z]/.test(password);
+const hasnumber=/[0-9]/.test(password);
+const hasspecial=/[^a-zA-Z0-9]/.test(password);
+if(!hasupper){
+alert("password should contain atleast one uppercase letter");
+return false;
+}
+if (!hasnumber){
+alert("password should contain atleast one digit");
+return false;
+}
+if(!hasspecial){
+alert("password should contain ateast one special character");
+return false;
+}
+const emailpattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+if (!emailpattern.test(email)){
+alert("Please enter valid email address");
+return false;
+}
+alert("Registration successful");
+}
+</script>
+</head>
+<body>
+<div class="container">
+<img src="https://www.vbithydexams.in/Images/SBICON/New%20folder/Header.png" height="80" width="300">
+<h1> Registration form </h1>
+<form onsubmit="return validateForm()">
+First Name:<input type="text" id="fname" placeholder="enter first name"><br> <br>
+Last Name:<input type="text" id="lname" placeholder="enter last name"><br> <br>
+Email:<input type="text" id="email" placeholder="enter your email"><br> <br>
+Password:<input type="password" id="pswd" placeholder="enter your password"><br><br>
+Confirm Password:<input type="password" id="password" placeholder="enter your confirm password"><br><br>
+Phone number:<input type="text" id="phn" maxlength="10" placeholder="enter your number"><br><br>
+Gender:
+<select id="gender" required>
+<option value="male"> Male </option>
+<option value="Female"> Female </option>
+<option value="others"> others </option>
+</select><br><br>
+Address:<input type="textarea" id="add"><br><br>
+<button type="submit">Register</button>
+</form>
+</div>
+</body>
+</html>
