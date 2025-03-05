@@ -2,7 +2,7 @@ pipeline{
 agent any
 stages{
 stage('clone'){
-steps
+steps{
 git 'https://github.com/22P61A0533/gesture-hci.git'
 }
 }
@@ -32,4 +32,4 @@ failure{
 echo 'Pipeline failed'
 }
 }
-
+}
