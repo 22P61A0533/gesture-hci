@@ -9,7 +9,7 @@ stage('clone') {  // Stage for building your project
                 git 'https://github.com/22P61A0533/gesture-hci.git/'
                 // Add build commands here (e.g., mvn, npm, etc.)
             }
-        }
+}
                
 stage('Build') {  // Stage for building your project
             steps {
